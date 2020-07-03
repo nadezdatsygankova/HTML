@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- author: Nadezda Tsygankova -->
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<title>Another Webpage</title>
+    <link rel="stylesheet" type ="text/css" href="pages.css"/>
+	
+	<script> 
+
+		function fVerifyInput(evt)
+		{		 
+			evt = (evt) ? evt : window.event;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+	 
+			if ((charCode >= 48 && charCode <= 57) || charCode == 45) 
+			{
+				return true;
+			}
+			return false;	
+		}
+	    function myFunction() {
+             document.getElementById("selMayor").reset();
+           }
+	
+	
+		</script>
+</head>
+
+<body>
+	<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+	<form id="container">
+
+		
+		<a class="item"> CYCLING </a>
+
+		<select id="selMayor" name="selMayor" >
+			<option>&nbsp;</option>
+				<option value="Road bikes">Road bikes</option>
+				<option value="Kids bikes">Kids bikes</option>
+				<option value="Mountain bikes">Mountain bikes</option>
+				<option value="Bike training wheels">Bike training wheels</option>
+		        <option value="Cycling gloves">Cycling gloves</option>
+		</select>
+		
+
+		<input class="item" id="txtSIN1" maxlength="3" onkeypress="return fVerifyInput(event);"
+		onpaste="return false;"
+		 placeholder="999"  type="text" />
+
+		<a class="item"> OUTDOOR </a>
+
+		<select id="selMayor" name="selMayor" >
+			<option>&nbsp;</option>
+			<option value="Camping tent" >Camping tent</option>
+			<option value="Hiking backpack">Hiking backpack</option>
+			<option value="Horse riding">Horse riding</option>
+			<option value="Indoor climbing rope" >Indoor climbing rope</option>
+			<option value="Fishing set">Fishing set	</option>
+		
+	</select>
+
+		<input class="item" id="txtSIN2" maxlength="3" onkeypress="return fVerifyInput(event);"
+		 placeholder="999" size="3" type="text" />
+
+		<a class="item"> RUNNING & WALKING </a>
+
+		<select id="selMayor" name="selMayor" >
+			<option>&nbsp;</option>
+			<option value="Run active jogging shoes">Run active jogging shoes</option>
+			<option value="Men's running shorts">Men's running shorts</option>
+			<option value="Onwalk 500 pedometer and accelerometer">Onwalk 500 pedometer and accelerometer</option>
+			<option value="Trail running soft bottle">Trail running soft bottle</option>
+			<option value="Fresh compression socks">Fresh compression socks</option>
+		
+	</select>
+		<input class="item" id="selMayor" maxlength="3" onkeypress="return fVerifyInput(event);" 
+		placeholder="999" size="3" type="text" />
+
+		<a class="item"> WATER SPORTS </a>
+
+		<select id="selMayor" name="selMayor" >
+			<option>&nbsp;</option>
+			<option value="Swimming goggles dye pink blue">Swimming goggles dye pink blue</option>
+			<option value="Inflatable cruising kayak">Inflatable cruising kayak</option>
+			<option value="Paddle board">Paddle board</option>
+			<option value="Kids' steamer full wetsuit">Kids' steamer full wetsuit</option>
+			<option value="Cycling gloves">Cycling gloves</option>
+		
+	</select>
+		<input class="item" id="selMayor" maxlength="3" onkeypress="return fVerifyInput(event);" 
+		placeholder="999" size="3" type="text" />
+        <a class="item1"></a>
+		<button class="item" onclick ="alert('Thank you for your order')" type="button">ORDER NOW</button>
+
+		<button class="item"  type=" reset"  onclick ="alert('We are hope to see you soon')" >CANCEL</button>
+		
+</form>
+	
+</body>
+
+</html>
