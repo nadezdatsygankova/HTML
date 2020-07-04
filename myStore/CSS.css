@@ -31,6 +31,10 @@ header
 	
    
 }
+
+
+	
+
        
         
       
@@ -46,7 +50,8 @@ ul{
 	width: 100%;
 }
 li{
-	float:left;
+	
+	display: inline;
 }
 
 li a{
@@ -56,9 +61,10 @@ li a{
 	padding:14px 16px;
 	text-decoration: none;
 	background-color: lavender;
+	display: inline-block;
 }
 li a:hover:not(.active){
-	background-color:cadetblue;
+	background-color:rgb(216, 229, 230);
 }
 li .active{
 	color: rgb(255, 255, 255);
@@ -74,23 +80,33 @@ footer
 
 li .tran{
 	transition-duration: 3s;
+	opacity: 0.1;
+	
 	
 }
+#container2{
+	top:260px;
+	
+}
+  
 
-#container2
+iframe
 {
-	top: 260px;
+	height:800px;
+	 width:100%; 
 }
-#transition2
+
+li .op
 {
-	background-color: rgb(31, 26, 77);
-	border-width: 0;
-	height: 20%;
-	width: 50%;
-	transition: background-color 2s, width 2s;
+	display:block;
+	color:rgb(74, 82, 192);
+	text-align: center;
+	padding:14px 16px;
+	text-decoration: none;
+	background-color: lavender;
+	display: inline-block;
 }
-#container2:hover #transition2
-{
-	background-color: rgb(103, 53, 170);
-	width: 90%;
-}   
+
+.tran:hover{
+	opacity: 1;
+}

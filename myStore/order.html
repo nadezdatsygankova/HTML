@@ -5,14 +5,14 @@
 <head>
 
 	<meta charset="UTF-8" />
-	<title>Another Webpage</title>
+	<title>ORDER</title>
     <link rel="stylesheet" type ="text/css" href="pages.css"/>
 	
 	<script> 
 
 		function fVerifyInput(evt)
 		{		 
-			evt = (evt) ? evt : window.event;
+			
 			var charCode = (evt.which) ? evt.which : evt.keyCode;
 	 
 			if ((charCode >= 48 && charCode <= 57) || charCode == 45) 
@@ -22,7 +22,7 @@
 			return false;	
 		}
 	    function myFunction() {
-             document.getElementById("selMayor").reset();
+             document.getElementById("opt").reset();
            }
 	
 	
@@ -36,13 +36,13 @@
 		<br>
 		<br>
 		<br>
-
+		<h1>ORDER</h1>
 	<form id="container">
 
 		
 		<a class="item"> CYCLING </a>
 
-		<select id="selMayor" name="selMayor" >
+		<select class="opt" name="opt" >
 			<option>&nbsp;</option>
 				<option value="Road bikes">Road bikes</option>
 				<option value="Kids bikes">Kids bikes</option>
@@ -52,13 +52,13 @@
 		</select>
 		
 
-		<input class="item" id="txtSIN1" maxlength="3" onkeypress="return fVerifyInput(event);"
+		<input class="item"  maxlength="3" onkeypress="return fVerifyInput(event);"
 		onpaste="return false;"
 		 placeholder="999"  type="text" />
 
 		<a class="item"> OUTDOOR </a>
 
-		<select id="selMayor" name="selMayor" >
+		<select class="opt" name="opt" >
 			<option>&nbsp;</option>
 			<option value="Camping tent" >Camping tent</option>
 			<option value="Hiking backpack">Hiking backpack</option>
@@ -68,12 +68,13 @@
 		
 	</select>
 
-		<input class="item" id="txtSIN2" maxlength="3" onkeypress="return fVerifyInput(event);"
-		 placeholder="999" size="3" type="text" />
+		<input class="item"  maxlength="3" onkeypress="return fVerifyInput(event);"
+		onpaste="return false;"
+		placeholder="999" size="3" type="text" />
 
 		<a class="item"> RUNNING & WALKING </a>
 
-		<select id="selMayor" name="selMayor" >
+		<select class="opt" name="opt" >
 			<option>&nbsp;</option>
 			<option value="Run active jogging shoes">Run active jogging shoes</option>
 			<option value="Men's running shorts">Men's running shorts</option>
@@ -82,12 +83,13 @@
 			<option value="Fresh compression socks">Fresh compression socks</option>
 		
 	</select>
-		<input class="item" id="selMayor" maxlength="3" onkeypress="return fVerifyInput(event);" 
+		<input class="item" maxlength="3" onkeypress="return fVerifyInput(event);" 
+		onpaste="return false;"
 		placeholder="999" size="3" type="text" />
 
 		<a class="item"> WATER SPORTS </a>
 
-		<select id="selMayor" name="selMayor" >
+		<select class="opt" name="opt" >
 			<option>&nbsp;</option>
 			<option value="Swimming goggles dye pink blue">Swimming goggles dye pink blue</option>
 			<option value="Inflatable cruising kayak">Inflatable cruising kayak</option>
@@ -96,12 +98,13 @@
 			<option value="Cycling gloves">Cycling gloves</option>
 		
 	</select>
-		<input class="item" id="selMayor" maxlength="3" onkeypress="return fVerifyInput(event);" 
+		<input class="item"  maxlength="3" onkeypress="return fVerifyInput(event);" 
+		onpaste="return false;"
 		placeholder="999" size="3" type="text" />
         <a class="item1"></a>
-		<button class="item" onclick ="alert('Thank you for your order')" type="button">ORDER NOW</button>
+		<button class="item" onclick ="alert('Thank you for your order')" type=button>ORDER NOW</button>
 
-		<button class="item"  type=" reset"  onclick ="alert('We are hope to see you soon')" >CANCEL</button>
+		<button class="item"  type = reset  onclick ="alert('We are hope to see you soon')" >CANCEL</button>
 		
 </form>
 	
