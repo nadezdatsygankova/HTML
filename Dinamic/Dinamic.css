@@ -1,0 +1,99 @@
+
+
+/*.container
+{
+    width: 500px;
+    height: 700px;  
+    overflow:hidden;
+    border: 1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+.img
+{
+   /* object-fit: cover;*/
+ width:400;
+ height: 200;
+
+}
+
+body
+{
+	background: url(img/background.jpg) ;
+    background-color: transparent;  
+    background-size: cover;		
+    color:rgb(87, 139, 163);
+    font: 1em calibri, arial;
+}
+
+
+
+
+.cursor {
+    cursor: pointer;
+  }
+
+  .demo {
+    opacity: 1;
+    width: 50px;
+    height: 80px;
+  }
+
+  .column {
+    
+    border-radius: 15px;
+    padding: 15px;
+   
+  }
+ 
+  .right:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  nav /*style for aside*/
+  {
+     margin-top:15px; 
+     border-radius: 15px;
+     padding: 15px;
+     vertical-align: top;
+     float:right; /*right position*/
+    /** right:0;*/
+
+  }
+
+  .container
+	{
+		background-color: #ffffff;
+        border: 1px solid rgba(50%, 50%, 50%, 0.5);
+		border-radius: 10px;
+		box-shadow:	6px 6px 30px rgba(55, 55, 55, .6);
+		font-size: 1.5em;
+        margin: 1vh auto;
+		min-height: 500px;
+        padding: 1vh 5vh 1vh;
+		text-align: center;
+        width: 40%;
+        opacity:0.1;
+    }
+    
+
+
+    .big-continer
+    {
+        background-color: #ffffff;
+        border: 1px solid rgba(50%, 50%, 50%, 0.5);
+		border-radius: 10px;
+		box-shadow:	6px 6px 30px rgba(55, 55, 55, .6);
+		font-size: 1.5em;
+        margin: 1vh auto;
+		min-height: 200px;
+        padding: 1vh 5vh 1vh;
+		text-align: center;
+        width: 70%;
+        opacity:0.5;
+
+    }
