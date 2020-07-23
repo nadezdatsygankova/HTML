@@ -127,3 +127,19 @@ body
         right: 15px;
 
     }
+
+
+    .home{
+        width: 400px;
+        height: 700px;
+    }
+
+    .notVisiable
+    {
+        opacity: 0;
+    }
+
+
+    .notVisiable:hover{
+        opacity: 1;
+    }

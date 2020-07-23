@@ -121,9 +121,11 @@ function fInitialize()
     function myFunction(images) {
         var expandImg = document.getElementById("lblResult");
       
-       /* expandImg.src = images.src;*/
+       expandImg.src = images.src;
 
-        expandImg.src = name[parseInt(images)];
+       images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
+
+       /* expandImg.src = name[parseInt(images)];
         /*
         expandImg.innerHTML = name[parseInt(images.name)];
         
