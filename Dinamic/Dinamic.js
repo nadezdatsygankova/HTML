@@ -111,7 +111,7 @@ function fInitialize()
 		lblResult.innerHTML = "";
     };
 */
-    function myFunction(num) {
+    function myFunction(num, idN) {
         var expandImg = document.getElementById("lblResult");
       
      //  expandImg.src = images.src;
@@ -121,33 +121,19 @@ function fInitialize()
      
      //  images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
 
+      var newId= getElement(idN);
+  
+newId.style.cssText="object-fit:cover ";
+
+    var textCon=document.getElementById("text");
+    console.log(textCon);
+
+expandImg.alt=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height;
 
 
-
-    
-      var tiger = (document.getElementById("tiger")); 
-      var bear = (document.getElementById("bear")); 
-      var camel = (document.getElementById('camel')); 
-      var capybara = (document.getElementById('capybara')); 
-      var dear = (document.getElementById('dear')); 
-      var donkey = (document.getElementById('donkey')); 
-      var monkey1 = (document.getElementById('monkey1')); 
-      var monkey2 = (document.getElementById('monkey2')); 
-      var ostrich = (document.getElementById('ostrich')); 
-
-      
-
-      tiger.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      bear.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      camel.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      capybara.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      dear.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      donkey.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      monkey1.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      monkey2.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      ostrich.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
-      
-
+textCon.innerText=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height
+//console.log(textCon.innerText);
+   
        //images[num].dimensions.height = expandImg.height=100;
        
        
@@ -175,9 +161,7 @@ function fCSSa(images)
 
     function getElement(id)
       {
-          return document.getElementById(id);
+        var el=document.getElementById(id);
+        return el;
       }
 
-
-      var ner=getElement("tiger");
-      alert(ner);
