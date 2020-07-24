@@ -160,11 +160,17 @@ body
 
   }
 
-  .text:hover{
+  .text:hover  {
       opacity: 1;
+      
   }
 
 .home
 {
+    
     z-index: 1;
+}
+
+.home:hover{
+    filter: brightness(200%)
 }
