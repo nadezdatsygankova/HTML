@@ -1,4 +1,4 @@
-/*const images = [
+const images = [
     {
         name: "img/tiger.jpg",
         description: "Tiger.",
@@ -82,16 +82,9 @@
 
 
 ];
-*/
-
-var name=["img/tiger.jpg", "img/bear.jpg"];
-var description=["Tiger.","Polar bear"]
-var intArray=new Array();
-var i=0;
-
-
-
-
+//доступ к src images
+var srcImg=images[0].name;
+/*alert(srcImg);
 
 /*
 function fonload()
@@ -118,13 +111,47 @@ function fInitialize()
 		lblResult.innerHTML = "";
     };
 */
-    function myFunction(images) {
+    function myFunction(num) {
         var expandImg = document.getElementById("lblResult");
       
-       expandImg.src = images.src;
+     //  expandImg.src = images.src;
+      var nameImages=images[num].name;
+       // alert(nameImages);
+     expandImg.src= nameImages;
+     
+     //  images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
 
-       images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
 
+
+
+    
+      var tiger = (document.getElementById("tiger")); 
+      var bear = (document.getElementById("bear")); 
+      var camel = (document.getElementById('camel')); 
+      var capybara = (document.getElementById('capybara')); 
+      var dear = (document.getElementById('dear')); 
+      var donkey = (document.getElementById('donkey')); 
+      var monkey1 = (document.getElementById('monkey1')); 
+      var monkey2 = (document.getElementById('monkey2')); 
+      var ostrich = (document.getElementById('ostrich')); 
+
+      
+
+      tiger.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      bear.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      camel.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      capybara.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      dear.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      donkey.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      monkey1.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      monkey2.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      ostrich.style.cssText=expandImg.style.cssText=" width: 400px, height: 700px,position: relative;"
+      
+
+       //images[num].dimensions.height = expandImg.height=100;
+       
+       
+       //window.alert(expandImg.innerHTML);
        /* expandImg.src = name[parseInt(images)];
         /*
         expandImg.innerHTML = name[parseInt(images.name)];
@@ -143,4 +170,14 @@ function fCSSa(images)
         findCon.src = images.src;
         findCon.style.cssText="width: 400; height: 700";
         //document.getElementById("camel").style.cssText="filter:brightness(200%)";
-	}*/
+    }*/
+    
+
+    function getElement(id)
+      {
+          return document.getElementById(id);
+      }
+
+
+      var ner=getElement("tiger");
+      alert(ner);
