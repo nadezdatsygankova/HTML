@@ -93,7 +93,7 @@ body
 		text-align: center;
         width: 400px;
         height: 700px;
-        /*opacity:0.1;*/
+       /* width: 55%;*/
         position: relative;
         box-shadow: 5px 10px #888888;
         display: block;
@@ -174,3 +174,4 @@ body
 .home:hover{
     filter: brightness(200%)
 }
+

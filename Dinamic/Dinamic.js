@@ -82,17 +82,15 @@ const images = [
 
 
 ];
-//доступ к src images
-var srcImg=images[0].name;
-/*alert(srcImg);
+//open src images
+//var srcImg=images[0].name;
 
-/*
 function fonload()
 {
-   var expandImg= document.getElementById("lblResult").src;
-   var firstImg = document.getElementById("first").src;
-   expandImg=firstImg;
+  myFunction(0);
 };
+
+
 // picture above image
 /*
 (images[0].description)//desription
@@ -111,39 +109,57 @@ function fInitialize()
 		lblResult.innerHTML = "";
     };
 */
-    function myFunction(num, idN) {
+    function myFunction(num) {
         var expandImg = document.getElementById("lblResult");
       
-     //  expandImg.src = images.src;
+ 
       var nameImages=images[num].name;
-       // alert(nameImages);
+    
      expandImg.src= nameImages;
      
      //  images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
 
-      var newId= getElement(idN);
-  
-newId.style.cssText="object-fit:cover ";
+     // var newId= getElement(idN);
 
-    var textCon=document.getElementById("text");
-    console.log(textCon);
+    //  expandImg.style.cssText="width: 400px; height: 600px; object-fit:cover ";
+     
+ 
+      var textCon=document.getElementById("text");
+    
 
-expandImg.alt=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height;
+
+textCon.innerText=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height;
 
 
-textCon.innerText=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height
-//console.log(textCon.innerText);
-   
-       //images[num].dimensions.height = expandImg.height=100;
+
+
+//style.getPropertyValue("width"));
+
+        var weghtImg=Number(images[num].dimensions.width); //442
+       // console.log(weghtImg);
+       var heghtImg=Number(images[num].dimensions.heght); 
+
+
+       //var widthBox=getComputedStyle(document.expandImg);
+       //alert(widthBox.width);
        
+       var widthBox=400;
+       var heightBox=600;
        
-       //window.alert(expandImg.innerHTML);
-       /* expandImg.src = name[parseInt(images)];
-        /*
-        expandImg.innerHTML = name[parseInt(images.name)];
-        
-        /*expandImg.parentElement.style.display = "block";*/
-        /*expandImg.style.cssText=" width: 400; height: 700 "*/
+       var resultWeght=weghtImg/widthBox;
+
+       var widthN=weghtImg/resultWeght; //finish result for img -400
+
+
+       var resultHeght=heghtImg/heightBox;
+       var heightN=heghtImg/resultHeght; 
+
+       expandImg.style.height=heightN;
+       expandImg.style.width=widthN;
+       console.log(expandImg.style.cssText);
+
+
+
     };
     
 
@@ -164,4 +180,51 @@ function fCSSa(images)
         var el=document.getElementById(id);
         return el;
       }
+
+
+
+      //стрелки
+function key(event)
+{
+    var code=event.keyCode;
+    console.log(code);
+
+    var expandImg = document.getElementById("textCoverImg");
+    var i =Number(expandImg.getAttribute('value'));
+    
+    if( code == 38 ) { //  up
+        if(i<=length.images && i>0)
+        {
+            myFunction((i-1));
+        }
+        else if (i<=0)
+        {
+            myFunction(length.imges);
+        }
+        
+    }
+    if( code == 40 ) { //  down
+        if(i<=length.images && i>0)
+        {
+            myFunction((i+1));
+        }
+        else if(i>=length.images)
+        {
+            myFunction(0);
+        }
+    }
+
+
+};/*
+      document.body.addEventListener( "keydown", function( e ) {
+        var code = e.keyCode;
+        var evt = new MouseEvent( "click" );  // нажатие мыши
+                 
+       
+                    
+    }, false); */  
+
+
+
+
 
