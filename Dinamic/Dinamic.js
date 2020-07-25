@@ -88,8 +88,9 @@ const images = [
 function fonload()
 {
   myFunction(0);
-  textCoverImg.focus()
-  
+  var expandImgO = document.getElementById("textCoverImg");
+  expandImgO.focus();
+  console.log(expandImgO);
 };
 
 
@@ -162,6 +163,11 @@ function fInitialize()
             expandImgO.value=num;
           //  console.log(expandImgO.value);
 
+
+          var currentImageNuber=expandImg.substring(expandImg.lastIndexOf('/') +1,expandImg.lastIndexOf('/')+2);
+          
+          console.log(currentImageNuber);
+
     };
     
 
@@ -176,7 +182,7 @@ function fInitialize()
 
 
       //стрелки
-function key(event)
+/*function key(event)
 {
     
     
@@ -217,7 +223,8 @@ function key(event)
     }
 
 
-};/*
+};
+*//*
       document.body.addEventListener( "keydown", function( e ) {
         var code = e.keyCode;
         var evt = new MouseEvent( "click" );  // нажатие мыши
@@ -227,7 +234,7 @@ function key(event)
     }, false); */  
 
 
-    function fOnkeyDown(evt)
+ /*   function fOnkeyDown(evt)
     {
    
 		var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -256,3 +263,32 @@ function currentImg(n)
         currentIm=((i+len)%len);
         myFunction(currentIm);
     }
+
+    */
+
+
+    document.onkeydown=function(event){
+        console.log(event);
+
+
+        var expandImg = document.getElementById("lblResult");
+
+
+        var expandImgO = document.getElementById("textCoverImg");
+            console.log(expandImgO.value);
+
+        if (event.keyCode ==40){
+            console.log('Enter ArrowDown ');
+
+        }
+
+        if(event.keyCode ==38)
+        {
+            console.log('Enter ArrowUp ');
+        }
+    }
+/*
+    document.getElementById('lblResult').onkeydown=function(event)
+    {
+
+    }*/
