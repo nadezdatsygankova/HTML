@@ -1,27 +1,4 @@
 
-
-/*.container
-{
-    width: 500px;
-    height: 700px;  
-    overflow:hidden;
-    border: 1px solid red;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    display: block;
-}
-/*
-.img
-{
-   /* object-fit: cover;*/
- /*width:200px;
- height: 400px;
- width: 100%;
-
-}
-*/
-
 body
 {
 	background: url(img/background.jpg) ;
@@ -36,11 +13,11 @@ body
     text-align: center;
 }
 
-/*
+
 .cursor {
     cursor: pointer;
   }
-*/
+
   .demo {
     opacity: 1;
     width: 50px;
@@ -81,7 +58,7 @@ body
 
   }
 
-  .continer
+  .container
 	{
 		
         border: 1px solid rgba(50%, 50%, 50%, 0.5);
@@ -93,18 +70,13 @@ body
 		text-align: center;
         width: 400px;
         height: 700px;
-       /* width: 55%;*/
         position: relative;
         box-shadow: 5px 10px #888888;
         display: block;
 
     }
 
-/*
-    .container:hover:not(.active){
-        filter: brightness(200%);
-    }
-    */
+
 
 
     .big-continer
@@ -121,26 +93,18 @@ body
 		text-align: center;
         width: 1000px;
         height: 1000px;
-       /* opacity:0.5;*/
+      
 
     }
 
 
-   /* #text_picture
-    {
-        color: cornsilk;
-        left: 20px;
-        right: 15px;
-
-    }
-
-*/
-   /* .home{
+/*
+    .home{
         width: 400px;
-        height: 700px;
+        height: 800px;
     }
-
- */
+*/
+ 
 
 
   .text
@@ -149,17 +113,19 @@ body
     position: absolute;
     
       color: white;
-      width: 400px;
-      height: 700px;
+      width: 100px;
+      height: 300px;
       
       text-align: center;
       opacity: 0;
       transition: all 0.5s ease;
       z-index: 10;
-      left: 20%;
+      left: 30%;
 
   }
-
+  .home:hover{
+    filter: brightness(200%)
+}
   .text:hover  {
       opacity: 1;
       
@@ -171,7 +137,9 @@ body
     z-index: 1;
 }
 
-.home:hover{
-    filter: brightness(200%)
-}
+
+
+
+
+
 

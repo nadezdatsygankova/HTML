@@ -3,8 +3,8 @@ const images = [
         name: "img/1.jpg",
         description: "Tiger.",
         dimensions: {
-            width: 442,
-		height: 640
+            width: 414,
+		height: 600
         }
     },
     {
@@ -12,7 +12,7 @@ const images = [
         description: "Polar bear",
         dimensions: {
             width: 425,
-		height: 600
+		height: 640
         }
     },
     {
@@ -82,8 +82,7 @@ const images = [
 
 
 ];
-//open src images
-//var srcImg=images[0].name;
+
 
 function fonload()
 {
@@ -92,34 +91,19 @@ function fonload()
 };
 
 
-// picture above image
-/*
-(images[0].description)//desription
-(images[1].description)
-
-/*
-function fnOnload () {
-=${document.getElementById("")}
-*/
-
-
-/*
-
-function fInitialize()
-    {
-		lblResult.innerHTML = "";
-    };
-*/
 
     function myFunction(num) {
         var expandImg = document.getElementById("lblResult");
-      
+        var contImg=document.getElementById("textCoverImg");
+        console.log(contImg);
+
+
         //variable for value
  
       var nameImages=images[num].name;
     
      expandImg.src= nameImages; //src of image in the container
-     
+     expandImg.alt=images[num].description;
     
      
  //display text 
@@ -133,50 +117,70 @@ function fInitialize()
 
 
         var weghtImg=Number(images[num].dimensions.width); //width images original
-       // console.log(weghtImg);
+        console.log(weghtImg);
        var heghtImg=Number(images[num].dimensions.height); 
-      // console.log(heghtImg);
+         console.log(heghtImg);
 
      
-
-
-       var widthBox=expandImg.width;
-       var heightBox=expandImg.height;
+         var widthBoxS=contImg.style.width;
+         var widthBox=parseInt(widthBoxS.match(/\d+/));
        
+       console.log(widthBox);
+
+       var heightBoxS=contImg.style.height;
+       var heightBox=parseInt(heightBoxS.match(/\d+/));
+       console.log(heightBox);
+/*
+
        var resultWeght=weghtImg/widthBox;
-
+        console.log(resultWeght);
        var widthN=weghtImg/resultWeght; //finish result for img -400
-
+       console.log(widthN);
 
        var resultHeght=heghtImg/heightBox;
        var heightN=heghtImg/resultHeght; 
-
+       console.log(heightN);
        expandImg.height=heightN;
        expandImg.width=widthN;
-       //console.log(expandImg.height);
-       //console.log(expandImg.width);
+       console.log(expandImg.height);
+       console.log(expandImg.width);
+
+*/
+      var kof=Number(heghtImg/weghtImg);//koff 
+       console.log(kof);
+
+       if((heghtImg<heightBox)&&(weghtImg>widthBox))
+       {
+        
+        weghtImg=(weghtImg/kof);
+        console.log(weghtImg);
+
+       // expandImg.style.height=heghtImg+"px";
+       expandImg.style.height="auto";
+        expandImg.style.width=weghtImg+"px";
+       }
+       else if(heghtImg>heightBox)
+       {
+        heghtImg=heightBox;
+        console.log(heghtImg);
+       // weghtImg=(weghtImg/kof);
+      //  console.log(weghtImg);
+        expandImg.style.height=heghtImg+"px";
+        expandImg.style.width="auto";
+       }
+      else {
+       
+
+        expandImg.style.height=heghtImg+"px";
+        expandImg.style.width=weghtImg+"px";
+       }
 
 
-       //position
-       var expandImgO = document.getElementById("textCoverImg");
-         //   expandImgO.value=num;
-          //  console.log(expandImgO.value);
-
-
-         // var currentImageNuber=expandImg.substring(expandImg.lastIndexOf('/') +1,expandImg.lastIndexOf('/')+2);
-          
-       //   console.log(currentImageNuber);
-
+       console.log( expandImg);
+       
+        
     };
     
-
-
-
-    function getElement(id)
-      {
-        var el=document.getElementById(id);
-        return el;
-      }
 
 
 
