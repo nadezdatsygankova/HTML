@@ -120,11 +120,7 @@ function fInitialize()
     
      expandImg.src= nameImages; //src of image in the container
      
-     //  images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
-
-     // var newId= getElement(idN);
-
-    //  expandImg.style.cssText="width: 400px; height: 600px; object-fit:cover ";
+    
      
  //display text 
       var textCon=document.getElementById("text");
@@ -134,12 +130,12 @@ function fInitialize()
 
 
 
-//style.getPropertyValue("width"));
+
 
         var weghtImg=Number(images[num].dimensions.width); //width images original
-        console.log(weghtImg);
+       // console.log(weghtImg);
        var heghtImg=Number(images[num].dimensions.height); 
-       console.log(heghtImg);
+      // console.log(heghtImg);
 
      
 
@@ -157,24 +153,19 @@ function fInitialize()
 
        expandImg.height=heightN;
        expandImg.width=widthN;
-       console.log(expandImg.height);
-       console.log(expandImg.width);
+       //console.log(expandImg.height);
+       //console.log(expandImg.width);
 
+
+       //position
+       var expandImgO = document.getElementById("textCoverImg");
+            expandImgO.value=num;
+          //  console.log(expandImgO.value);
 
     };
     
 
-/*
-//функция для изменения изображения
-function fCSSa(images)
-	{
-       var findCon= document.getElementById("lblResult");
-      
-        findCon.src = images.src;
-        findCon.style.cssText="width: 400; height: 700";
-        //document.getElementById("camel").style.cssText="filter:brightness(200%)";
-    }*/
-    
+
 
     function getElement(id)
       {
@@ -195,26 +186,31 @@ function key(event)
 
 
 
-    var expandImg = document.getElementById("textCoverImg");
-    var i =Number(expandImg.getAttribute('value'));
+    var expandImgO = document.getElementById("textCoverImg");
+    var i =Number(expandImgO.getAttribute('value'));
+    console.log(i);
+
+    var len=Number(images.length);
+    console.log(len);
     
     if( code == 38 ) { //  up
-        if(i<=length.images && i>0)
+        if((i<=len) && (i>0))
         {
+            console.log(i);
             myFunction((i-1));
         }
         else if (i<=0)
         {
-            myFunction(Number(length.imges));
+            myFunction(len);
         }
         
     }
     if( code == 40 ) { //  down
-        if(i<=length.images && i>0)
+        if(i<=Number(len) && i>0)
         {
             myFunction((i+1));
         }
-        else if(i>=Number(length.images))
+        else if(i>=Number(len))
         {
             myFunction(0);
         }
@@ -240,3 +236,23 @@ function key(event)
     }	
 
 
+
+/*
+    function nextImage(n,index){
+        myFunction(index+n);
+    }
+function currentImg(n)
+{
+    myFunction(index=n);
+}
+    function lastImg()
+    {
+        goToImg(currentIm-1);
+    }
+
+    function goToImg(i)
+    {
+        var len=Number(images.length);
+        currentIm=((i+len)%len);
+        myFunction(currentIm);
+    }
