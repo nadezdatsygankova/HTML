@@ -88,6 +88,8 @@ const images = [
 function fonload()
 {
   myFunction(0);
+  textCoverImg.focus()
+  
 };
 
 
@@ -112,10 +114,11 @@ function fInitialize()
     function myFunction(num) {
         var expandImg = document.getElementById("lblResult");
       
+        //variable for value
  
       var nameImages=images[num].name;
     
-     expandImg.src= nameImages;
+     expandImg.src= nameImages; //src of image in the container
      
      //  images.wight = expandImg.style.cssText=" height: 700px; margin: 0 auto; width: 400px;";
 
@@ -123,28 +126,26 @@ function fInitialize()
 
     //  expandImg.style.cssText="width: 400px; height: 600px; object-fit:cover ";
      
- 
+ //display text 
       var textCon=document.getElementById("text");
     
-
-
-textCon.innerText=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height;
+      textCon.innerText=images[num].description +"\n"+ " width: "  + images[num].dimensions.width + "\n"+ " height: " +images[num].dimensions.height;
 
 
 
 
 //style.getPropertyValue("width"));
 
-        var weghtImg=Number(images[num].dimensions.width); //442
-       // console.log(weghtImg);
-       var heghtImg=Number(images[num].dimensions.heght); 
+        var weghtImg=Number(images[num].dimensions.width); //width images original
+        console.log(weghtImg);
+       var heghtImg=Number(images[num].dimensions.height); 
+       console.log(heghtImg);
+
+     
 
 
-       //var widthBox=getComputedStyle(document.expandImg);
-       //alert(widthBox.width);
-       
-       var widthBox=400;
-       var heightBox=600;
+       var widthBox=expandImg.width;
+       var heightBox=expandImg.height;
        
        var resultWeght=weghtImg/widthBox;
 
@@ -154,10 +155,10 @@ textCon.innerText=images[num].description +"\n"+ " width: "  + images[num].dimen
        var resultHeght=heghtImg/heightBox;
        var heightN=heghtImg/resultHeght; 
 
-       expandImg.style.height=heightN;
-       expandImg.style.width=widthN;
-       console.log(expandImg.style.cssText);
-
+       expandImg.height=heightN;
+       expandImg.width=widthN;
+       console.log(expandImg.height);
+       console.log(expandImg.width);
 
 
     };
@@ -186,8 +187,13 @@ function fCSSa(images)
       //стрелки
 function key(event)
 {
-    var code=event.keyCode;
+    
+    
+    evt = (event) ? event : window.event;							//	window.event is MS IE specific
+    var code = (event.which) ? event.which : event.keyCode;
     console.log(code);
+
+
 
     var expandImg = document.getElementById("textCoverImg");
     var i =Number(expandImg.getAttribute('value'));
@@ -199,7 +205,7 @@ function key(event)
         }
         else if (i<=0)
         {
-            myFunction(length.imges);
+            myFunction(Number(length.imges));
         }
         
     }
@@ -208,7 +214,7 @@ function key(event)
         {
             myFunction((i+1));
         }
-        else if(i>=length.images)
+        else if(i>=Number(length.images))
         {
             myFunction(0);
         }
@@ -225,6 +231,12 @@ function key(event)
     }, false); */  
 
 
-
+    function fOnkeyDown(evt)
+    {
+   
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+	
+		return charCode;
+    }	
 
 
