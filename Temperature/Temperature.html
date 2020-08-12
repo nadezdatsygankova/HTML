@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<!-- author: Nadezda Tsygankova -->
+<!--  WEB222N1Q  Assignment - Temperature Conversion-->
+
+
+
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<title >Temperature Coversion</title>
+
+    <link rel="stylesheet" type ="text/css" href="Temperature.css"/>
+    <script src="Temperature.js"></script>
+
+</head>
+
+
+<body > 
+	<main>
+      
+		<h1 class="first"> Temperature Conversion by Nadezda Tsygankova</h1>
+
+        <section class="big-continer">
+            <h6>&nbsp;</h6>
+            <p ></p>
+           <label>
+             Fahrenheit
+           </label>
+           <input  id="f" type="number"   min = "-9999" max="9999" onkeyup="convert('F')">
+           <br>
+           <br>
+
+        </input>
+
+           <label>
+             Celsius
+          </label>
+          <input id="c" type="number" disabled>
+          <br>
+          <br>
+
+       </input>
+
+
+
+
+          <label>
+   Fahrenheit    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Celsius
+          </label>
+          <br>
+         
+
+        
+
+         
+
+
+          <textarea id = "textar" rows="20" cols="60"  disabled>
+
+          </textarea>
+          <br>
+
+          <button id ="covert" onclick="display()">
+            Covert
+          </button>
+
+          <button>
+            Average
+          </button>
+   
+          <button>
+            Reset
+        </button>
+
+            </section>
+
+
+
+
+    </main>
+</body>
+</html>
