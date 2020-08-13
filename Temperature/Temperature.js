@@ -1,20 +1,20 @@
 function convert(degree) {
-    var x;
-    if (degree == "C") {
-      x = document.getElementById("c").value * 9 / 5 + 32;
-      document.getElementById("f").value = x.toFixed(2);
-    } else {
-      x = (document.getElementById("f").value -32) * 5 / 9;
-      document.getElementById("c").value =x.toFixed(2);
-    }
-  }
-/*
-  function validate(evt)
-  {
-      evt.value=evt.value.replace(/[^0-9]/g,"");
+    
+   var x;
+    
+    x = (document.getElementById("f").value -32) * 5 / 9;
+    document.getElementById("c").value =x.toFixed(2);
+
+      display();
+      document.getElementById("f").value = "";
+
+    
+      
+    
+    
+    
   }
 
-  */
 
 function display()
 {
@@ -33,4 +33,30 @@ function display()
     
 
 
+}
+
+function buttonConvert()
+{
+  var far = document.getElementById('f').value;
+if (far)
+{
+  document.getElementById('covert').disabled=false;
+}
+
+
+}
+
+
+function f(x) {
+  var firstValue = x.dataset.value || "";
+  var nextValue = x.value;
+  var num = Number(nextValue);
+  if (nextValue == '-' || (!isNaN(num) && num <= 9999 && num >= -9999)) 
+  {
+    x.dataset.value= nextValue;
+    return true;
+  } else {
+    x.value = firstValue;
+    return false;
+  }
 }

@@ -30,7 +30,7 @@
            <label>
              Fahrenheit
            </label>
-           <input  id="f" type="number"   min = "-9999" max="9999" onkeyup="convert('F')">
+           <input  id="f" type="text"   onkeyup="return f(this)"  onkeydown="buttonConvert()"  > 
            <br>
            <br>
 
@@ -64,15 +64,15 @@
           </textarea>
           <br>
 
-          <button id ="covert" onclick="display()">
+          <button id ="covert"  onclick="convert('F')" disabled>
             Covert
           </button>
 
-          <button>
+          <button disabled value="0">
             Average
           </button>
    
-          <button>
+          <button >
             Reset
         </button>
 
