@@ -19,12 +19,12 @@
 </head>
 
 
-<body > 
+<body onload="fonload();"> 
 	<main>
       
 		<h1 class="first"> Temperature Conversion by Nadezda Tsygankova</h1>
 
-        <section class="big-continer">
+        <section class="big-continer" id="section">
             <h6>&nbsp;</h6>
             <p ></p>
            <label>
@@ -52,29 +52,23 @@
    Fahrenheit    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Celsius
           </label>
           <br>
-         
-
-        
-
-         
-
 
           <textarea id = "textar" rows="20" cols="60"  disabled>
 
           </textarea>
           <br>
 
-          <button id ="covert"  onclick="convert('F')" disabled>
+          <button id ="covert"  onclick="convert()" disabled>
             Covert
           </button>
 
-          <button disabled value="0">
+          <button id="average" disabled value="0" onclick="average()">
             Average
           </button>
    
-          <button >
-            Reset
-        </button>
+         
+            
+        
 
             </section>
 
