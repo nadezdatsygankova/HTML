@@ -2,36 +2,33 @@
 //fucus in onload  
 function fonload()
 {
+  document.getElementById('textar').value="";
+    document.getElementById('f').value="";
+    document.getElementById('c').value="";
   document.getElementById('f').focus();
-  var input = document.getElementById('f');
-console.log(input);
-input.addEventListener("keyup", function(event)
-{
-  if (event.keyCode === 13) {
-   event.preventDefault();
-   document.getElementById("covert").click();
-  }
-});
+
+  document.getElementById('average').disabled=true;
+
 }
 
 //Valid values ranges from -9999 to 9999
 function f(x) {
   var firstValue = x.dataset.value || "";
-  console.log(firstValue);
   var nextValue = x.value;
-  console.log(nextValue);
   var num = Number(nextValue);
-  console.log(num);
   
-  if (nextValue == '-' || (!isNaN(num) && num <= 9999 && num >= -9999 && num%1==0)) 
+  if (nextValue == '-' || (!isNaN(num) && num <= 9999 && num >= -9999 && num%1==0 )) 
   {
-   
-  x.dataset.value= parseInt(nextValue);
+    
+  x.dataset.value= nextValue;
+
   buttonConvert();
+  
   return true;
 }
 else {
-    x.value = firstValue;
+    x.value = "";
+    document.getElementById('covert').disabled=true;
     return false;
   }
   
@@ -45,24 +42,28 @@ function buttonConvert()
   console.log(far);
 if (far)
 {
+  
   document.getElementById('covert').disabled=false;
   document.getElementById('average').disabled=true;
 }
-
+var input = document.getElementById('f');
+input.addEventListener("keyup", function(event)
+{
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("covert").click();
+  }
+});
 }
 
 //display function in textarea
 function display()
 {
   
-    var far = document.getElementById('f').value;
-    console.log(far);
+    var far = Number(document.getElementById('f').value);
     var cel = document.getElementById('c').value;
-    console.log(cel);
     var textArea=document.getElementById('textar').value;
-    console.log(textArea);
     textArea= textArea+"\n"+"                  " +far+"                  "+cel+"\n";
-    console.log(textArea);
     document.getElementById('textar').value=textArea;
     document.getElementById('covert').disabled=true;
 
@@ -78,17 +79,12 @@ var count =10;
 //array push
 function fLoadArray()
 	{
-    var i=0;
-    for(i=0;i<10;i++)
-    {
+   
       var f=document.getElementById('f').value;
       console.log(f);
       floatArrayF.push(parseFloat(f));
       floatArrayC.push(parseFloat(c.value));
-      
-
-    }
-
+   
 	
   }
   
@@ -96,7 +92,7 @@ function fLoadArray()
   function convert() {
     
     var x;
-     
+
      
       x = (document.getElementById("f").value -32) * 5 / 9;
       document.getElementById("c").value =x.toFixed(2);
@@ -108,6 +104,8 @@ function fLoadArray()
         document.getElementById("average").disabled=false;
         
      count --;
+     console.log(count);
+     document.getElementById('f').focus();
      if(count ==0)
      {
       average();
@@ -140,11 +138,16 @@ function buttonAverage()
     var averageC=0;
     for (var k = 0; k < floatArrayF.length; k++)
     {
+      console.log(floatArrayF.length);
             sumF=sumF+floatArrayF[k];
+            console.log(floatArrayF[0]);
             sumC=sumC+floatArrayC[k];
+            console.log(sumC);
     }
           averageF=sumF/floatArrayF.length;
+          console.log(averageF);
           averageC=sumC/floatArrayC.length;
+          console.log(averageC);
 
       textArea= textArea +"================================================"+"\n"+ "                "+averageF.toFixed(2)+"                 "+averageC.toFixed(2)+"\n";
     console.log(textArea);
@@ -152,6 +155,7 @@ function buttonAverage()
     console.log(textArea);
     buttonAverage();
    
+
   }
 
 
@@ -182,6 +186,9 @@ function appearReset()
     parent.removeChild(elem);
     document.getElementById('f').disabled=false;
     document.getElementById('f').focus();
+    floatArrayF.length=0;
+    floatArrayC.length=0;
+    count =10;
   }
 
 
