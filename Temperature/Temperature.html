@@ -30,11 +30,10 @@
            <label>
              Fahrenheit
            </label>
-           <input  id="f" type="text"   onkeyup="return f(this)"  onkeydown="buttonConvert()"  > 
+           <input  id="f" type="text"  value="" onkeyup="return f(this)"    > 
            <br>
            <br>
 
-        </input>
 
            <label>
              Celsius
@@ -43,23 +42,21 @@
           <br>
           <br>
 
-       </input>
 
 
 
 
           <label>
-   Fahrenheit    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Celsius
+   Fahrenheit    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Celsius
           </label>
           <br>
 
-          <textarea id = "textar" rows="20" cols="60"  disabled>
-
+          <textarea id = "textar" rows="23" cols="60"  disabled>
           </textarea>
           <br>
 
           <button id ="covert"  onclick="convert()" disabled>
-            Covert
+            Convert
           </button>
 
           <button id="average" disabled value="0" onclick="average()">
